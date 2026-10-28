@@ -672,3 +672,17 @@ button {
     font-size: 2.3rem;
   }
 }
+
+/* Full-width media that matches the project hero image */
+.project-content .container.wide {
+  max-width: 1280px;
+}
+
+.project-gallery.media-match .gallery-img {
+  aspect-ratio: 5 / 3;
+  overflow: hidden;
+}
+
+.project-gallery.media-match .gallery-img.fit img {
+  object-fit: contain;
+}
