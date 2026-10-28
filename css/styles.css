@@ -167,13 +167,13 @@ button {
   display: block;
   overflow: hidden;
   background: #f0eeea;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 3 / 2;
   transition: opacity 0.4s var(--ease);
 }
 
 .project-card.wide {
   grid-column: span 1;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 3 / 2;
 }
 
 .project-card.hidden {
