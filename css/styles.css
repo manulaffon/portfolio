@@ -167,13 +167,13 @@ button {
   display: block;
   overflow: hidden;
   background: #f0eeea;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 16 / 9;
   transition: opacity 0.4s var(--ease);
 }
 
 .project-card.wide {
   grid-column: span 1;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 16 / 9;
 }
 
 .project-card.hidden {
@@ -197,6 +197,10 @@ button {
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+.project-card.fit .project-image img {
+  object-fit: contain;
 }
 
 .project-card:hover .project-image {
