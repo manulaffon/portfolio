@@ -10,7 +10,7 @@ A refined, minimal industrial design portfolio inspired by high-end studios such
 - Soft warm off-white background (#f7f6f3)
 - High-contrast near-black text
 - Project presentation inspired by LAYER’s projects page: clear project name + client/category
-- Elegant typography (Space Grotesk + Inter)
+- Elegant typography (Manrope + Inter)
 - Subtle hover effects and scroll fade-ins
 - Fully responsive
 
