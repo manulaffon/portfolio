@@ -648,3 +648,19 @@ button {
 .project-gallery.media-match .gallery-img.fit img {
   object-fit: contain;
 }
+
+/* Two square images side by side, spanning the hero width */
+.project-gallery.media-pair {
+  grid-template-columns: 1fr 1fr;
+}
+
+.project-gallery.media-pair .gallery-img {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+@media (max-width: 640px) {
+  .project-gallery.media-pair {
+    grid-template-columns: 1fr;
+  }
+}
