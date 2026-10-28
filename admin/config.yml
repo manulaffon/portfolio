@@ -106,7 +106,6 @@ collections:
         widget: boolean
         default: true
         hint: Turn off to hide this project from the home page and take its page offline.
-      - { name: category, label: Category on the home page tile, widget: string, default: Product }
       - { name: subtitle, label: Small label above the project name, widget: string, default: "Product · Consumer Electronics" }
       - { name: intro, label: Intro (under the project name), widget: text }
       - { name: description, label: Search engine description, widget: text, required: false }
