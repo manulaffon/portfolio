@@ -1,0 +1,35 @@
+name: Emmanuel de Mazieres
+title: Emmanuel de Mazieres — Industrial Designer
+description: Emmanuel de Mazieres is an industrial designer creating beautiful, well-crafted and useful objects and experiences.
+
+hero_title: |-
+  Industrial Designer
+  creating beautiful,
+  useful objects
+hero_subtitle: Principal Industrial Designer focused on thoughtful products that balance form, function, and human experience.
+
+about_label: About
+about_heading: Crafting objects that feel inevitable
+about_text: |-
+  Emmanuel de Mazieres is an industrial designer with over a decade of experience creating beautiful, well-crafted, and useful products. His work sits at the intersection of form, technology, and human behavior.
+
+  Currently Principal Industrial Designer, he has contributed to consumer electronics, wearables, and everyday objects — always with a focus on clarity, material honesty, and thoughtful interaction.
+
+  Previously he worked at IDEO, fuseproject, and other leading studios, developing a rigorous yet intuitive approach to design that balances strategic thinking with meticulous craft.
+about_details:
+  - label: Based in
+    value: San Francisco Bay Area
+  - label: Focus
+    value: Industrial Design · Product · CMF
+  - label: Previously
+    value: IDEO · fuseproject · Incase
+
+contact_label: Contact
+contact_heading: Let’s create something meaningful
+contact_text: Open to collaborations, conversations, and new opportunities.
+contact_email: hello@emmanueldemazieres.com
+contact_links:
+  - label: LinkedIn
+    url: https://linkedin.com
+  - label: Coroflot
+    url: https://coroflot.com

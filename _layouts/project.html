@@ -1,0 +1,115 @@
+---
+layout: default
+---
+{%- assign p = page -%}
+  <!-- Project Hero -->
+  <section class="project-hero">
+    <div class="container">
+      <a href="{{ '/#work' | relative_url }}" class="back-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        Back to Work
+      </a>
+
+      <div class="project-hero-inner">
+        <p class="project-client">{{ p.subtitle | escape }}</p>
+        <h1 class="project-hero-title">{{ p.title | escape }}</h1>
+        <p class="project-hero-desc">
+          {{ p.intro | strip | escape }}
+        </p>
+      </div>
+{% if p.hero_image %}
+      <div class="project-hero-image{% if p.hero_fit == 'contain' %} fit{% endif %}" style="aspect-ratio: {{ p.hero_shape | default: '5 / 3' }};{% if p.hero_background and p.hero_background != '' %} background: {{ p.hero_background }};{% endif %}">
+        <img src="{{ p.hero_image | relative_url }}" alt="{{ p.hero_alt | escape }}">
+      </div>
+{% endif %}
+    </div>
+  </section>
+
+  <!-- Project Content -->
+  <section class="project-content">
+    <div class="container">
+
+      <div class="project-meta-row">
+        <div class="meta-item">
+          <h4>Client</h4>
+          <p>{{ p.client | escape }}</p>
+        </div>
+        <div class="meta-item">
+          <h4>Role</h4>
+          <p>{{ p.role | escape }}</p>
+        </div>
+        <div class="meta-item">
+          <h4>Year</h4>
+          <p>{{ p.year | escape }}</p>
+        </div>
+        <div class="meta-item">
+          <h4>Focus</h4>
+          <p>{{ p.focus | escape }}</p>
+        </div>
+      </div>
+
+    </div>
+{% for block in p.blocks %}
+{%- assign shape = block.shape | default: '5 / 3' -%}
+{%- capture bg %}{% if block.background and block.background != '' %} background: {{ block.background }};{% endif %}{% endcapture -%}
+{%- if block.type == 'text' %}
+    <div class="container">
+      <div class="project-section">
+{%- if block.heading and block.heading != '' %}
+        <h2>{{ block.heading | escape }}</h2>
+{%- endif %}
+        {{ block.body | markdownify }}
+      </div>
+    </div>
+{%- elsif block.type == 'image' and block.image %}
+    <div class="container{% if block.width != 'text' %} wide{% endif %}">
+      <div class="project-gallery media-match">
+        <div class="gallery-img{% if block.fit == 'contain' %} fit{% endif %}" style="aspect-ratio: {{ shape }};{{ bg }}">
+          <img src="{{ block.image | relative_url }}" alt="{{ block.alt | escape }}">
+        </div>
+      </div>
+    </div>
+{%- elsif block.type == 'pair' %}
+    <div class="container{% if block.width != 'text' %} wide{% endif %}">
+      <div class="project-gallery media-pair">
+{%- if block.left %}
+        <div class="gallery-img{% if block.fit == 'contain' %} fit{% endif %}" style="aspect-ratio: {{ block.shape | default: '1 / 1' }};{{ bg }}">
+          <img src="{{ block.left | relative_url }}" alt="{{ block.left_alt | escape }}">
+        </div>
+{%- endif %}
+{%- if block.right %}
+        <div class="gallery-img{% if block.fit == 'contain' %} fit{% endif %}" style="aspect-ratio: {{ block.shape | default: '1 / 1' }};{{ bg }}">
+          <img src="{{ block.right | relative_url }}" alt="{{ block.right_alt | escape }}">
+        </div>
+{%- endif %}
+      </div>
+    </div>
+{%- elsif block.type == 'video' and block.video %}
+{%- case block.position -%}
+{%- when 'top' -%}{%- assign pos = '50% 0%' -%}
+{%- when 'bottom' -%}{%- assign pos = '50% 100%' -%}
+{%- else -%}{%- assign pos = '50% 50%' -%}
+{%- endcase %}
+    <div class="container{% if block.width != 'text' %} wide{% endif %}">
+      <div class="project-gallery media-match">
+        <div class="gallery-img{% if block.fit == 'contain' %} fit{% endif %}" style="aspect-ratio: {{ shape }};{{ bg }}">
+          <video src="{{ block.video | relative_url }}"{% if block.poster %} poster="{{ block.poster | relative_url }}"{% endif %} autoplay muted loop playsinline style="object-position: {{ pos }};" aria-label="{{ block.alt | escape }}"></video>
+        </div>
+      </div>
+    </div>
+{%- endif %}
+{% endfor %}
+    <div class="container">
+      <div style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border);">
+        <a href="{{ '/#work' | relative_url }}" class="back-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+          </svg>
+          Back to all projects
+        </a>
+      </div>
+    </div>
+  </section>
+

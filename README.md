@@ -17,47 +17,34 @@ A refined, minimal industrial design portfolio inspired by high-end studios such
 ## Sections
 
 - **Hero** — Confident, short introduction
-- **Selected Work** — Vertical list of projects with image placeholders
+- **Selected Work** — Two-column grid of project tiles
 - **About** — Bio and key details
 - **Contact** — Direct email + links
 
-## How to Customize
+## Editing the Site
 
-1. **Projects**  
-   Replace the gradient placeholders with real project photography.  
-   Update the project names and categories.  
-   Point the links to individual case studies if you have them.
+Go to **https://demazieres.com/admin/** and sign in with a GitHub personal access token
+(fine-grained, limited to this repository, with *Contents: Read and write*). From there you can:
 
-2. **About**  
-   Edit the three paragraphs and the detail rows (location, focus, previous experience).
+- edit the home page, About and Contact text (**Home Page & About**)
+- edit each project's text and pictures, show or hide a project, and add new ones (**Projects**)
+- drag projects into a new order with **Reorder**, and drag page sections to move pictures and text
 
-3. **Contact**  
-   Change the email and LinkedIn / portfolio links.
-
-4. **Colors**  
-   Adjust the CSS variables at the top of `css/styles.css` if you prefer a cooler or darker palette.
+Every save commits to `main`; GitHub Pages republishes in a minute or two.
+Uploaded photos are resized to 2400px and saved as WebP automatically.
 
 ## File Structure
 
 ```
-portfolio-website/
-├── index.html
-├── css/styles.css
-├── js/main.js
-└── README.md
+_config.yml          Jekyll settings (GitHub Pages builds the site)
+_data/site.yml       Home page, About and Contact text
+_projects/*.md       One file per project: details, pictures, page sections
+_layouts/            Page templates (default + project)
+admin/               Editing portal (Sveltia CMS) and its config.yml
+css/styles.css       Styles — colors are CSS variables at the top
+js/main.js           Mobile menu, header and footer year
+images/              Project photography and video
 ```
-
-## Run Locally
-
-Open `index.html` directly, or:
-
-```bash
-python -m http.server 8000
-```
-
-## Deploy
-
-Drag-and-drop ready for Netlify, Vercel, GitHub Pages, or Cloudflare Pages.
 
 ---
 

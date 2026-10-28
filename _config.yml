@@ -1,0 +1,23 @@
+# Site settings for GitHub Pages (Jekyll).
+# Page text lives in _data/site.yml and the projects in _projects/ —
+# both are edited from the portal at /admin.
+
+title: Emmanuel de Mazieres
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name:output_ext
+
+defaults:
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: project
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor

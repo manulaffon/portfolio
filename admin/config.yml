@@ -1,0 +1,220 @@
+# Editing portal settings (Sveltia CMS) for demazieres.com.
+# Each save commits to the main branch; GitHub Pages republishes in a minute or two.
+
+app_title: demazieres.com — Site Editor
+
+backend:
+  name: github
+  repo: manulaffon/portfolio
+  branch: main
+  auth_methods: [token]
+  commit_messages:
+    create: "Add {{collection}} “{{slug}}”"
+    update: "Update {{collection}} “{{slug}}”"
+    delete: "Remove {{collection}} “{{slug}}”"
+    uploadMedia: "Upload “{{path}}”"
+    deleteMedia: "Delete “{{path}}”"
+
+site_url: https://demazieres.com
+display_url: https://demazieres.com
+
+media_folder: images
+public_folder: /images
+
+# Uploaded photos are resized to at most 2400px and saved as compact WebP files.
+media_libraries:
+  default:
+    config:
+      max_file_size: 50000000
+      slugify_filename: true
+      transformations:
+        raster_image:
+          format: webp
+          quality: 85
+          width: 2400
+          height: 2400
+  stock_assets:
+    providers: []
+
+editor:
+  preview: false
+
+singletons:
+  - name: home
+    label: Home Page & About
+    icon: home
+    file: _data/site.yml
+    preview_path: /
+    fields:
+      - { name: name, label: Your name (logo and footer), widget: string }
+      - { name: title, label: Browser tab title, widget: string }
+      - { name: description, label: Search engine description, widget: text, required: false }
+      - name: hero_title
+        label: Headline
+        widget: text
+        hint: Each new line here starts a new line on the page.
+      - { name: hero_subtitle, label: Text under the headline, widget: text }
+      - { name: about_label, label: About — small label, widget: string }
+      - { name: about_heading, label: About — heading, widget: string }
+      - name: about_text
+        label: About — text
+        widget: markdown
+        buttons: [bold, italic, link]
+        modes: [rich_text, raw]
+      - name: about_details
+        label: About — details
+        label_singular: detail
+        widget: list
+        summary: "{{label}}: {{value}}"
+        fields:
+          - { name: label, label: Label, widget: string }
+          - { name: value, label: Value, widget: string }
+      - { name: contact_label, label: Contact — small label, widget: string }
+      - { name: contact_heading, label: Contact — heading, widget: string }
+      - { name: contact_text, label: Contact — text, widget: text }
+      - { name: contact_email, label: Contact — email, widget: string }
+      - name: contact_links
+        label: Contact — links
+        label_singular: link
+        widget: list
+        summary: "{{label}}"
+        fields:
+          - { name: label, label: Label, widget: string }
+          - { name: url, label: Web address, widget: string }
+
+collections:
+  - name: projects
+    label: Projects
+    label_singular: Project
+    icon: grid_view
+    description: Drag to change the order on the home page (Reorder), or switch “Show on website” off to hide a project.
+    folder: _projects
+    extension: md
+    format: frontmatter
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    identifier_field: title
+    summary: "{{title}}{{published | ternary('', ' — hidden')}}"
+    reorder: true
+    preview_path: "projects/{{slug}}.html"
+    thumbnail: card_image
+    fields:
+      - { name: title, label: Project name, widget: string }
+      - name: published
+        label: Show on website
+        widget: boolean
+        default: true
+        hint: Turn off to hide this project from the home page and take its page offline.
+      - { name: category, label: Category on the home page tile, widget: string, default: Product }
+      - { name: subtitle, label: Small label above the project name, widget: string, default: "Product · Consumer Electronics" }
+      - { name: intro, label: Intro (under the project name), widget: text }
+      - { name: description, label: Search engine description, widget: text, required: false }
+
+      - name: hero_image
+        label: Main picture
+        widget: image
+      - { name: hero_alt, label: Main picture — description, widget: string, required: false, hint: "Describe the picture for screen readers and search engines." }
+      - name: hero_shape
+        label: Main picture — shape
+        widget: select
+        default: "5 / 3"
+        options: &shapes
+          - { label: "5:3 (wide)", value: "5 / 3" }
+          - { label: "16:10", value: "16 / 10" }
+          - { label: "16:9", value: "16 / 9" }
+          - { label: "3:2", value: "3 / 2" }
+          - { label: "4:3", value: "4 / 3" }
+          - { label: "1:1 (square)", value: "1 / 1" }
+      - name: hero_fit
+        label: Main picture — fit
+        widget: select
+        default: cover
+        options: &fits
+          - { label: "Fill the frame (crops edges)", value: cover }
+          - { label: "Show the whole picture", value: contain }
+      - { name: hero_background, label: Main picture — background color, widget: color, allowInput: true, required: false }
+
+      - name: card_image
+        label: Home page tile — picture
+        widget: image
+        required: false
+        hint: Leave empty to use the main picture.
+      - { name: card_alt, label: Home page tile — picture description, widget: string, required: false }
+      - { name: card_fit, label: Home page tile — fit, widget: select, default: cover, options: *fits }
+      - { name: card_background, label: Home page tile — background color, widget: color, allowInput: true, required: false }
+
+      - { name: client, label: Client, widget: string, required: false }
+      - { name: role, label: Role, widget: string, required: false }
+      - { name: year, label: Year, widget: string, required: false }
+      - { name: focus, label: Focus, widget: string, required: false }
+
+      - name: blocks
+        label: Page sections
+        label_singular: section
+        widget: list
+        hint: Drag sections to move text and pictures around the page.
+        collapsed: true
+        typeKey: type
+        types:
+          - name: text
+            label: Text
+            widget: object
+            summary: "Text — {{heading}}"
+            fields:
+              - { name: heading, label: Heading, widget: string, required: false }
+              - name: body
+                label: Text
+                widget: markdown
+                buttons: [bold, italic, link, bulleted-list, numbered-list]
+                modes: [rich_text, raw]
+          - name: image
+            label: Picture
+            widget: object
+            summary: "Picture — {{alt}}"
+            fields:
+              - { name: image, label: Picture, widget: image }
+              - { name: alt, label: Description, widget: string, required: false }
+              - name: width
+                label: Width
+                widget: select
+                default: full
+                options: &widths
+                  - { label: "Full width (same as the main picture)", value: full }
+                  - { label: "Text width", value: text }
+              - { name: shape, label: Shape, widget: select, default: "5 / 3", options: *shapes }
+              - { name: fit, label: Fit, widget: select, default: cover, options: *fits }
+              - { name: background, label: Background color, widget: color, allowInput: true, required: false }
+          - name: pair
+            label: Two pictures side by side
+            widget: object
+            summary: "Two pictures — {{left_alt}} / {{right_alt}}"
+            fields:
+              - { name: left, label: Left picture, widget: image }
+              - { name: left_alt, label: Left picture — description, widget: string, required: false }
+              - { name: right, label: Right picture, widget: image }
+              - { name: right_alt, label: Right picture — description, widget: string, required: false }
+              - { name: width, label: Width, widget: select, default: full, options: *widths }
+              - { name: shape, label: Shape of each picture, widget: select, default: "1 / 1", options: *shapes }
+              - { name: fit, label: Fit, widget: select, default: cover, options: *fits }
+              - { name: background, label: Background color, widget: color, allowInput: true, required: false }
+          - name: video
+            label: Video
+            widget: object
+            summary: "Video — {{alt}}"
+            fields:
+              - { name: video, label: Video file (MP4), widget: file, accept: "video/mp4" }
+              - { name: poster, label: Still image shown while loading, widget: image, required: false }
+              - { name: alt, label: Description, widget: string, required: false }
+              - { name: width, label: Width, widget: select, default: full, options: *widths }
+              - { name: shape, label: Shape, widget: select, default: "5 / 3", options: *shapes }
+              - { name: fit, label: Fit, widget: select, default: cover, options: *fits }
+              - name: position
+                label: When cropped, keep in view
+                widget: select
+                default: center
+                options:
+                  - { label: Center, value: center }
+                  - { label: Top, value: top }
+                  - { label: Bottom, value: bottom }
+              - { name: background, label: Background color, widget: color, allowInput: true, required: false }

@@ -633,7 +633,9 @@ button {
   overflow: hidden;
 }
 
-.project-gallery.media-match .gallery-img.fit img {
+.gallery-img.fit img,
+.gallery-img.fit video,
+.project-hero-image.fit img {
   object-fit: contain;
 }
 

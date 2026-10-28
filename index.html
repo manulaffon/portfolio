@@ -1,42 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Emmanuel de Mazieres — Industrial Designer</title>
-  <meta name="description" content="Emmanuel de Mazieres is an industrial designer creating beautiful, well-crafted and useful objects and experiences.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-  <!-- Navigation -->
-  <header class="header" id="header">
-    <div class="container header-inner">
-      <a href="index.html" class="logo">Emmanuel de Mazieres</a>
-      <nav class="nav" id="nav">
-        <a href="#work" class="nav-link">Work</a>
-        <a href="#about" class="nav-link">About</a>
-        <a href="#contact" class="nav-link">Contact</a>
-      </nav>
-      <button class="menu-btn" id="menu-btn" aria-label="Menu">
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-  </header>
-
+---
+layout: default
+---
+{%- assign home = site.data.site -%}
+{%- assign projects = site.projects | sort: "order" -%}
   <!-- Hero -->
   <section class="hero" id="home">
     <div class="container">
       <h1 class="hero-title">
-        Industrial Designer<br>
-        creating beautiful,<br>
-        useful objects
+        {{ home.hero_title | strip | escape | newline_to_br }}
       </h1>
       <p class="hero-subtitle">
-        Principal Industrial Designer focused on thoughtful products that balance form, function, and human experience.
+        {{ home.hero_subtitle | strip | escape }}
       </p>
     </div>
   </section>
@@ -45,40 +19,19 @@
   <section class="work" id="work">
       <!-- Projects Grid (tiled) -->
       <div class="projects-grid" id="projects-grid">
-
-        <!-- Alexa Photo Frame -->
-        <a href="projects/alexa-photo-frame.html" class="project-card" data-category="product">
-          <div class="project-image">
-            <img src="images/alexa-photo-frame/alexa-photo-frame-01.jpg" alt="Alexa Photo Frame in walnut on a sideboard">
+{% for project in projects %}{% if project.published != false %}
+        <!-- {{ project.title }} -->
+        {%- assign card_image = project.card_image | default: project.hero_image %}
+        <a href="{{ project.url | relative_url }}" class="project-card{% if project.card_fit == 'contain' %} fit{% endif %}">
+          <div class="project-image"{% if project.card_background and project.card_background != '' %} style="background: {{ project.card_background }};"{% endif %}>
+            <img src="{{ card_image | relative_url }}" alt="{{ project.card_alt | default: project.hero_alt | escape }}">
           </div>
           <div class="project-overlay">
-            <h3 class="project-title">Alexa Photo Frame</h3>
-            <p class="project-cat">Product</p>
+            <h3 class="project-title">{{ project.title | escape }}</h3>
+            <p class="project-cat">{{ project.category | escape }}</p>
           </div>
         </a>
-
-        <!-- Echo Time -->
-        <a href="projects/echo-time.html" class="project-card" data-category="product">
-          <div class="project-image">
-            <img src="images/echo-time/echo-time-03.jpg" alt="Echo Time on a nightstand beside a lamp, showing a 6:30 alarm">
-          </div>
-          <div class="project-overlay">
-            <h3 class="project-title">Echo Time</h3>
-            <p class="project-cat">Product</p>
-          </div>
-        </a>
-
-        <!-- Project 9 - Incase -->
-        <a href="projects/incase.html" class="project-card fit" data-category="product">
-          <div class="project-image" style="background: #fff;">
-            <img src="images/incase/incase-01.jpg" alt="Incase Hammered Snap Case for iPhone 4S">
-          </div>
-          <div class="project-overlay">
-            <h3 class="project-title">Incase</h3>
-            <p class="project-cat">Product</p>
-          </div>
-        </a>
-
+{% endif %}{% endfor %}
       </div>
   </section>
 
@@ -87,32 +40,18 @@
     <div class="container">
       <div class="about-grid">
         <div class="about-left">
-          <div class="section-label">About</div>
-          <h2 class="about-heading">Crafting objects that feel inevitable</h2>
+          <div class="section-label">{{ home.about_label | escape }}</div>
+          <h2 class="about-heading">{{ home.about_heading | escape }}</h2>
         </div>
         <div class="about-right">
-          <p>
-            Emmanuel de Mazieres is an industrial designer with over a decade of experience creating beautiful, well-crafted, and useful products. His work sits at the intersection of form, technology, and human behavior.
-          </p>
-          <p>
-            Currently Principal Industrial Designer, he has contributed to consumer electronics, wearables, and everyday objects — always with a focus on clarity, material honesty, and thoughtful interaction.
-          </p>
-          <p>
-            Previously he worked at IDEO, fuseproject, and other leading studios, developing a rigorous yet intuitive approach to design that balances strategic thinking with meticulous craft.
-          </p>
+          {{ home.about_text | markdownify }}
           <div class="about-details">
+{% for detail in home.about_details %}
             <div class="detail">
-              <span class="detail-label">Based in</span>
-              <span class="detail-value">San Francisco Bay Area</span>
+              <span class="detail-label">{{ detail.label | escape }}</span>
+              <span class="detail-value">{{ detail.value | escape }}</span>
             </div>
-            <div class="detail">
-              <span class="detail-label">Focus</span>
-              <span class="detail-value">Industrial Design · Product · CMF</span>
-            </div>
-            <div class="detail">
-              <span class="detail-label">Previously</span>
-              <span class="detail-value">IDEO · fuseproject · Incase</span>
-            </div>
+{% endfor %}
           </div>
         </div>
       </div>
@@ -123,28 +62,18 @@
   <section class="contact" id="contact">
     <div class="container">
       <div class="contact-inner">
-        <div class="section-label">Contact</div>
-        <h2 class="contact-heading">Let’s create something meaningful</h2>
+        <div class="section-label">{{ home.contact_label | escape }}</div>
+        <h2 class="contact-heading">{{ home.contact_heading | escape }}</h2>
         <p class="contact-text">
-          Open to collaborations, conversations, and new opportunities.
+          {{ home.contact_text | strip | escape }}
         </p>
-        <a href="mailto:hello@emmanueldemazieres.com" class="contact-email">hello@emmanueldemazieres.com</a>
+        <a href="mailto:{{ home.contact_email }}" class="contact-email">{{ home.contact_email | escape }}</a>
         <div class="contact-links">
-          <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
-          <a href="https://coroflot.com" target="_blank" rel="noopener">Coroflot</a>
+{% for link in home.contact_links %}
+          <a href="{{ link.url }}" target="_blank" rel="noopener">{{ link.label | escape }}</a>
+{% endfor %}
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container footer-inner">
-      <span class="footer-logo">Emmanuel de Mazieres</span>
-      <span class="footer-copy">© <span id="year"></span></span>
-    </div>
-  </footer>
-
-  <script src="js/main.js"></script>
-</body>
-</html>
