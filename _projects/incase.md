@@ -5,15 +5,15 @@ published: true
 subtitle: Product · Consumer Electronics
 intro: A hammered metallic snap case for iPhone, built to pair everyday durability with a refined, tactile finish.
 description: Incase — a hammered metallic snap case for iPhone, designed for durable, everyday protection with a refined finish.
-hero_image: /images/incase/incase-01.jpg
-hero_alt: Incase Hammered Snap Case for iPhone 4S — full product view
-hero_shape: 16 / 10
+hero_image: /images/incase/incase-hero.jpg
+hero_alt: Incase hammered snap cases in copper and silver for iPhone 4S
+hero_shape: 5 / 3
 hero_fit: cover
 hero_background: ''
-card_image: /images/incase/incase-01.jpg
-card_alt: Incase Hammered Snap Case for iPhone 4S
-card_fit: contain
-card_background: '#ffffff'
+card_image: /images/incase/incase-card.jpg
+card_alt: Incase hammered snap cases in gold and navy for iPhone 4S
+card_fit: cover
+card_background: ''
 client: Incase
 role: Industrial Design, CMF, Prototyping
 year: '2011'
