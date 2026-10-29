@@ -1,13 +1,9 @@
 name: Emmanuel de Mazieres
 title: Emmanuel de Mazieres — Industrial Designer
 description: Emmanuel de Mazieres is an industrial designer who treats form, material and texture as a language, designing products that show what they do and how they belong where they live.
-
 hero_title: Iconic Design
-hero_tagline: |-
-  Design is a language.
-  Form is how objects speak.
+hero_tagline: Design is the language objects speak.
 hero_subtitle: Industrial designer shaping products whose form, materials and textures say what they do — and how they belong in the places people live.
-
 about_label: About
 about_heading: Objects that explain themselves
 about_text: |-
@@ -23,7 +19,6 @@ about_details:
     value: Industrial Design · Product · CMF
   - label: Previously
     value: IDEO · fuseproject · Incase
-
 contact_label: Contact
 contact_heading: Let’s make something that speaks for itself
 contact_text: Open to collaborations, conversations, and new opportunities.
