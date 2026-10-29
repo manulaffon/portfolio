@@ -10,7 +10,7 @@ hero_alt: ''
 hero_shape: 5 / 3
 hero_fit: cover
 hero_background: ''
-card_image: ''
+card_image: /images/fire_phone.webp
 card_alt: ''
 card_fit: cover
 card_background: ''
