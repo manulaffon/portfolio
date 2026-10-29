@@ -41,8 +41,8 @@ blocks:
   - type: image
     image: /images/echo-buds/echo-buds-03.jpg
     alt: Cutaway view of Echo Buds showing the driver, microphones and circuit board inside
-    width: text
-    shape: 6 / 5
+    width: full
+    shape: 5 / 3
     fit: contain
     background: "#ffffff"
   - type: text
