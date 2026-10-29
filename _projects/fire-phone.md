@@ -1,5 +1,5 @@
 ---
-order: 4
+order: 3
 title: Fire Phone
 published: true
 subtitle: Product · Consumer Electronics

@@ -1,23 +1,22 @@
 ---
+order: 4
 title: Incase
 published: true
-order: 3
-category: Product
 subtitle: Product · Consumer Electronics
-description: Incase — a hammered metallic snap case for iPhone, designed for durable, everyday protection with a refined finish.
 intro: A hammered metallic snap case for iPhone, built to pair everyday durability with a refined, tactile finish.
+description: Incase — a hammered metallic snap case for iPhone, designed for durable, everyday protection with a refined finish.
 hero_image: /images/incase/incase-01.jpg
 hero_alt: Incase Hammered Snap Case for iPhone 4S — full product view
 hero_shape: 16 / 10
 hero_fit: cover
-hero_background: ""
+hero_background: ''
 card_image: /images/incase/incase-01.jpg
 card_alt: Incase Hammered Snap Case for iPhone 4S
 card_fit: contain
-card_background: "#ffffff"
+card_background: '#ffffff'
 client: Incase
 role: Industrial Design, CMF, Prototyping
-year: "2011"
+year: '2011'
 focus: Product Design · Materials
 blocks:
   - type: text
@@ -27,13 +26,13 @@ blocks:
 
       The snap-fit shell was engineered to protect the corners and edges of the phone without adding unnecessary bulk, keeping the device's original proportions largely intact while reinforcing the areas most prone to impact.
   - type: pair
+    width: text
+    shape: 16 / 10
+    fit: cover
     left: /images/incase/incase-02.jpg
     left_alt: Incase hammered case, side angle
     right: /images/incase/incase-03.jpg
     right_alt: Incase hammered case, close-up on texture
-    width: text
-    shape: 16 / 10
-    fit: cover
   - type: text
     heading: Process & Craft
     body: |-
@@ -49,4 +48,5 @@ blocks:
   - type: text
     heading: Outcome
     body: The case shipped as part of Incase's protective accessories line, offering a distinct material language within a crowded category — proof that everyday protection doesn't have to come at the cost of considered design.
+category: Product
 ---
