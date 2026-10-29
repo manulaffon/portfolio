@@ -50,9 +50,14 @@ singletons:
       - { name: title, label: Browser tab title, widget: string }
       - { name: description, label: Search engine description, widget: text, required: false }
       - name: hero_title
-        label: Headline
+        label: Headline (large)
         widget: text
         hint: Each new line here starts a new line on the page.
+      - name: hero_tagline
+        label: Second line under the headline
+        widget: text
+        required: false
+        hint: Each new line here starts a new line on the page. Leave empty to hide it.
       - { name: hero_subtitle, label: Text under the headline, widget: text }
       - { name: about_label, label: About — small label, widget: string }
       - { name: about_heading, label: About — heading, widget: string }

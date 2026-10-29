@@ -9,6 +9,11 @@ layout: default
       <h1 class="hero-title">
         {{ home.hero_title | strip | escape | newline_to_br }}
       </h1>
+{%- if home.hero_tagline and home.hero_tagline != '' %}
+      <p class="hero-tagline">
+        {{ home.hero_tagline | strip | escape | newline_to_br }}
+      </p>
+{%- endif %}
       <p class="hero-subtitle">
         {{ home.hero_subtitle | strip | escape }}
       </p>
