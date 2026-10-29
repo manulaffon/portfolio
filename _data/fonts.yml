@@ -1,0 +1,23 @@
+# Fonts offered in the portal's "Fonts & Sizes" page (all loaded from Google Fonts).
+# Each name maps to the fallback used while the font loads.
+Manrope: sans-serif
+Inter: sans-serif
+Inter Tight: sans-serif
+Roboto: sans-serif
+Roboto Flex: sans-serif
+Geist: sans-serif
+DM Sans: sans-serif
+Work Sans: sans-serif
+IBM Plex Sans: sans-serif
+Plus Jakarta Sans: sans-serif
+Space Grotesk: sans-serif
+Instrument Sans: sans-serif
+Sora: sans-serif
+Outfit: sans-serif
+Figtree: sans-serif
+Archivo: sans-serif
+Montserrat: sans-serif
+Poppins: sans-serif
+Fraunces: serif
+Playfair Display: serif
+Newsreader: serif

@@ -11,6 +11,17 @@
   --radius: 2px;
   --font: 'Inter', system-ui, -apple-system, sans-serif;
   --font-display: 'Manrope', var(--font);
+  /* Type settings — overridden by the portal's "Fonts & Sizes" page. Sizes are px on large screens. */
+  --weight-display: 600;
+  --size-logo: 17;
+  --size-hero-title: 112;
+  --size-hero-tagline: 36;
+  --size-intro: 18;
+  --size-tile-title: 44;
+  --size-section-heading: 38;
+  --size-project-title: 68;
+  --size-project-heading: 24;
+  --size-body: 17;
   --ease: cubic-bezier(0.25, 0.1, 0.25, 1);
   --transition: 0.35s var(--ease);
 }
@@ -83,8 +94,8 @@ button {
 
 .logo {
   font-family: var(--font-display);
-  font-size: 1.05rem;
-  font-weight: 600;
+  font-size: calc(var(--size-logo) * 1px);
+  font-weight: var(--weight-display);
   letter-spacing: -0.02em;
 }
 
@@ -135,8 +146,8 @@ button {
 
 .hero-title {
   font-family: var(--font-display);
-  font-size: clamp(3.25rem, 9vw, 7rem);
-  font-weight: 600;
+  font-size: clamp(calc(var(--size-hero-title) * 0.33px), calc(var(--size-hero-title) * 1vw / 12.8), calc(var(--size-hero-title) * 1px));
+  font-weight: var(--weight-display);
   line-height: 1;
   letter-spacing: -0.045em;
   margin-bottom: 1.75rem;
@@ -144,19 +155,29 @@ button {
 
 .hero-tagline {
   font-family: var(--font-display);
-  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-size: clamp(calc(var(--size-hero-tagline) * 0.67px), calc(var(--size-hero-tagline) * 1vw / 12.8), calc(var(--size-hero-tagline) * 1px));
   font-weight: 500;
   line-height: 1.2;
   letter-spacing: -0.025em;
   margin-bottom: 1.5rem;
-  max-width: 24ch;
+  max-width: 36ch;
 }
 
 .hero-subtitle {
-  font-size: 1.1rem;
+  font-size: calc(var(--size-intro) * 1px);
   color: var(--text-secondary);
   max-width: 40ch;
   line-height: 1.65;
+}
+
+/* Even out line breaks so a heading never ends with one word alone on a line */
+.hero-title,
+.hero-tagline,
+.about-heading,
+.contact-heading,
+.project-hero-title,
+.project-section h2 {
+  text-wrap: balance;
 }
 
 /* ===== Projects Grid (Tiled) ===== */
@@ -245,8 +266,8 @@ button {
 
 .project-title {
   font-family: var(--font-display);
-  font-size: clamp(1.75rem, 3vw, 2.75rem);
-  font-weight: 600;
+  font-size: clamp(calc(var(--size-tile-title) * 0.64px), calc(var(--size-tile-title) * 1vw / 12.8), calc(var(--size-tile-title) * 1px));
+  font-weight: var(--weight-display);
   line-height: 1.1;
   color: #fff;
   letter-spacing: -0.02em;
@@ -284,15 +305,15 @@ button {
 
 .about-heading {
   font-family: var(--font-display);
-  font-size: clamp(1.7rem, 3.2vw, 2.3rem);
-  font-weight: 600;
+  font-size: clamp(calc(var(--size-section-heading) * 0.72px), calc(var(--size-section-heading) * 1vw / 12.8), calc(var(--size-section-heading) * 1px));
+  font-weight: var(--weight-display);
   letter-spacing: -0.03em;
   line-height: 1.25;
   max-width: 14ch;
 }
 
 .about-right p {
-  font-size: 1.05rem;
+  font-size: calc(var(--size-body) * 1px);
   color: var(--text-secondary);
   margin-bottom: 1.3rem;
   line-height: 1.75;
@@ -338,15 +359,15 @@ button {
 
 .contact-heading {
   font-family: var(--font-display);
-  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
-  font-weight: 600;
+  font-size: clamp(calc(var(--size-section-heading) * 0.72px), calc(var(--size-section-heading) * 1vw / 12.8), calc(var(--size-section-heading) * 1px));
+  font-weight: var(--weight-display);
   letter-spacing: -0.03em;
   line-height: 1.2;
   margin-bottom: 1.15rem;
 }
 
 .contact-text {
-  font-size: 1.05rem;
+  font-size: calc(var(--size-body) * 1px);
   color: var(--text-secondary);
   margin-bottom: 2.25rem;
 }
@@ -425,15 +446,15 @@ button {
 
 .project-hero-title {
   font-family: var(--font-display);
-  font-size: clamp(2.8rem, 6vw, 4.2rem);
-  font-weight: 600;
+  font-size: clamp(calc(var(--size-project-title) * 0.66px), calc(var(--size-project-title) * 1vw / 12.8), calc(var(--size-project-title) * 1px));
+  font-weight: var(--weight-display);
   letter-spacing: -0.035em;
   line-height: 1.1;
   margin-bottom: 1.5rem;
 }
 
 .project-hero-desc {
-  font-size: 1.2rem;
+  font-size: calc(var(--size-intro) * 1.0667px);
   color: var(--text-secondary);
   line-height: 1.65;
   max-width: 42ch;
@@ -464,14 +485,14 @@ button {
 
 .project-section h2 {
   font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-weight: 600;
+  font-size: calc(var(--size-project-heading) * 1px);
+  font-weight: var(--weight-display);
   letter-spacing: -0.02em;
   margin-bottom: 1.25rem;
 }
 
 .project-section p {
-  font-size: 1.05rem;
+  font-size: calc(var(--size-body) * 1px);
   color: var(--text-secondary);
   line-height: 1.8;
   margin-bottom: 1.25rem;
@@ -481,7 +502,7 @@ button {
   border-left: 2px solid var(--border-strong);
   padding-left: 1.5rem;
   margin: 2rem 0;
-  font-size: 1.15rem;
+  font-size: calc(var(--size-body) * 1.095px);
   font-style: italic;
   color: var(--text);
   line-height: 1.7;
@@ -613,12 +634,6 @@ button {
   .project-meta-row {
     grid-template-columns: 1fr;
     gap: 1.5rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-title {
-    font-size: 2.3rem;
   }
 }
 

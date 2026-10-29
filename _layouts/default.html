@@ -7,8 +7,30 @@
   <meta name="description" content="{{ page.description | default: site.data.site.description | strip_newlines | escape }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+{%- assign st = site.data.style -%}
+{%- assign hf = st.heading_font | default: 'Manrope' -%}
+{%- assign bf = st.body_font | default: 'Inter' -%}
+{%- assign hfb = site.data.fonts[hf] | default: 'sans-serif' -%}
+{%- assign bfb = site.data.fonts[bf] | default: 'sans-serif' %}
+  <link href="https://fonts.googleapis.com/css2?family={{ hf | replace: ' ', '+' }}:wght@400;500;600;700{% if bf != hf %}&family={{ bf | replace: ' ', '+' }}:wght@400;500;600;700{% endif %}&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ '/css/styles.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+  <style>
+    /* Set from the portal's "Fonts & Sizes" page (_data/style.yml). Sizes are pixels on a large screen. */
+    :root {
+      --font: '{{ bf }}', system-ui, -apple-system, {{ bfb }};
+      --font-display: '{{ hf }}', {{ hfb }};
+      --weight-display: {{ st.heading_weight | default: 600 }};
+      --size-logo: {{ st.size_logo | default: 17 }};
+      --size-hero-title: {{ st.size_hero_title | default: 112 }};
+      --size-hero-tagline: {{ st.size_hero_tagline | default: 36 }};
+      --size-intro: {{ st.size_intro | default: 18 }};
+      --size-tile-title: {{ st.size_tile_title | default: 44 }};
+      --size-section-heading: {{ st.size_section_heading | default: 38 }};
+      --size-project-title: {{ st.size_project_title | default: 68 }};
+      --size-project-heading: {{ st.size_project_heading | default: 24 }};
+      --size-body: {{ st.size_body | default: 17 }};
+    }
+  </style>
 </head>
 <body>
   <!-- Navigation -->
