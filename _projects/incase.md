@@ -26,7 +26,7 @@ blocks:
 
       The snap-fit shell was engineered to protect the corners and edges of the phone without adding unnecessary bulk, keeping the device's original proportions largely intact while reinforcing the areas most prone to impact.
   - type: pair
-    width: text
+    width: full
     shape: 16 / 10
     fit: cover
     left: /images/incase/incase-02.jpg
@@ -42,8 +42,8 @@ blocks:
   - type: image
     image: /images/incase/incase-04.jpg
     alt: Incase hammered case, installed on iPhone
-    width: text
-    shape: 16 / 10
+    width: full
+    shape: 5 / 3
     fit: cover
   - type: text
     heading: Outcome
