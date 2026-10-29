@@ -27,11 +27,11 @@ blocks:
       Active noise cancellation replaced the first generation's noise reduction, blocking about twice as much background sound, with a passthrough mode a long press away for when you want to hear the world around you.
   - type: image
     image: /images/echo-buds/echo-buds-02.jpg
-    alt: Echo Buds (2nd generation) in black, shown on white
+    alt: Echo Buds (2nd generation) in black, floating above a dark stone block
     width: full
     shape: 5 / 3
-    fit: contain
-    background: "#ffffff"
+    fit: cover
+    background: ""
   - type: text
     heading: A Quieter Form
     body: |-
