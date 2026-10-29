@@ -25,14 +25,6 @@ blocks:
       The brief was to design a protective case that felt considered rather than bulky — something that could stand up to daily wear while still reading as a premium accessory. The hammered metallic finish became the starting point: a texture that hides fingerprints and micro-scratches while giving the case a distinct, tactile identity on the shelf.
 
       The snap-fit shell was engineered to protect the corners and edges of the phone without adding unnecessary bulk, keeping the device's original proportions largely intact while reinforcing the areas most prone to impact.
-  - type: pair
-    width: full
-    shape: 16 / 10
-    fit: cover
-    left: /images/incase/incase-02.jpg
-    left_alt: Incase hammered case, side angle
-    right: /images/incase/incase-03.jpg
-    right_alt: Incase hammered case, close-up on texture
   - type: text
     heading: Process & Craft
     body: |-
