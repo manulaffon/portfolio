@@ -476,11 +476,31 @@ button {
 }
 
 .project-content .container {
-  max-width: 720px;
+  max-width: 1280px;
 }
 
+/* Text sections span the same width as the pictures:
+   heading in the left column, text in the right (like the About section) */
 .project-section {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  column-gap: 5rem;
+  align-items: start;
   margin-bottom: 4rem;
+}
+
+.project-section > * {
+  grid-column: 2;
+}
+
+.project-section > h2 {
+  grid-column: 1;
+  margin-bottom: 0;
+}
+
+/* "Text width" pictures line up with the text column */
+.project-content .container.text-col .project-gallery {
+  margin-left: calc((100% - 5rem) / 2.35 + 5rem);
 }
 
 .project-section h2 {
@@ -518,7 +538,7 @@ button {
 
 .project-meta-row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
   margin: 3rem 0;
   padding: 2rem 0;
@@ -581,6 +601,20 @@ button {
 }
 
 /* ===== Responsive ===== */
+@media (max-width: 1000px) {
+  .project-meta-row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .project-section {
+    column-gap: 3rem;
+  }
+
+  .project-content .container.text-col .project-gallery {
+    margin-left: calc((100% - 3rem) / 2.35 + 3rem);
+  }
+}
+
 @media (max-width: 768px) {
   .container {
     padding: 0 1.5rem;
@@ -634,6 +668,23 @@ button {
   .project-meta-row {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+  }
+
+  .project-section {
+    grid-template-columns: 1fr;
+  }
+
+  .project-section > *,
+  .project-section > h2 {
+    grid-column: 1;
+  }
+
+  .project-section > h2 {
+    margin-bottom: 1.25rem;
+  }
+
+  .project-content .container.text-col .project-gallery {
+    margin-left: 0;
   }
 }
 

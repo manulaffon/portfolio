@@ -64,7 +64,7 @@ layout: default
       </div>
     </div>
 {%- elsif block.type == 'image' and block.image %}
-    <div class="container{% if block.width != 'text' %} wide{% endif %}">
+    <div class="container{% if block.width == 'text' %} text-col{% else %} wide{% endif %}">
       <div class="project-gallery media-match">
         <div class="gallery-img{% if block.fit == 'contain' %} fit{% endif %}" style="aspect-ratio: {{ shape }};{{ bg }}">
           <img src="{{ block.image | relative_url }}" alt="{{ block.alt | escape }}">
@@ -72,7 +72,7 @@ layout: default
       </div>
     </div>
 {%- elsif block.type == 'pair' %}
-    <div class="container{% if block.width != 'text' %} wide{% endif %}">
+    <div class="container{% if block.width == 'text' %} text-col{% else %} wide{% endif %}">
       <div class="project-gallery media-pair">
 {%- if block.left %}
         <div class="gallery-img{% if block.fit == 'contain' %} fit{% endif %}" style="aspect-ratio: {{ block.shape | default: '1 / 1' }};{{ bg }}">
@@ -92,7 +92,7 @@ layout: default
 {%- when 'bottom' -%}{%- assign pos = '50% 100%' -%}
 {%- else -%}{%- assign pos = '50% 50%' -%}
 {%- endcase %}
-    <div class="container{% if block.width != 'text' %} wide{% endif %}">
+    <div class="container{% if block.width == 'text' %} text-col{% else %} wide{% endif %}">
       <div class="project-gallery media-match">
         <div class="gallery-img{% if block.fit == 'contain' %} fit{% endif %}" style="aspect-ratio: {{ shape }};{{ bg }}">
           <video src="{{ block.video | relative_url }}"{% if block.poster %} poster="{{ block.poster | relative_url }}"{% endif %} autoplay muted loop playsinline style="object-position: {{ pos }};" aria-label="{{ block.alt | escape }}"></video>
