@@ -17,7 +17,7 @@ card_background: ""
 client: Amazon
 role: Lead Industrial Designer, Hearables
 year: "2021"
-focus: Product Design · CMF
+focus: Industrial Design, Ergonomics and CMF
 blocks:
   - type: text
     heading: Smaller, Lighter, Quieter
