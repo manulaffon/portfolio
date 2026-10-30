@@ -34,7 +34,7 @@ blocks:
     alt: Alexa Photo Frame front and back views, with fold-out stand
     width: full
     shape: 5 / 3
-    fit: contain
+    fit: cover
     background: '#ffffff'
   - type: text
     heading: Details
