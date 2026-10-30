@@ -23,7 +23,7 @@ blocks:
     heading: A Frame First
     body: The Alexa Photo Frame was designed to sit in the home as a picture frame rather than a screen. A solid wood surround and a wide white mat give photos the presence of a printed image, so the product reads as part of the room instead of another device.
   - type: image
-    image: /images/alexa-photo-frame/alexa-photo-frame-hero-1920x1080.webp
+    image: /images/alexa-photo-frame/alexa-photo-frame-lifestyle-1920x1080.webp
     alt: ''
     width: full
     shape: 5 / 3
