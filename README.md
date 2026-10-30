@@ -26,8 +26,8 @@ A refined, minimal industrial design portfolio inspired by high-end studios such
 Go to **https://demazieres.com/admin/** and sign in with a GitHub personal access token
 (fine-grained, limited to this repository, with *Contents: Read and write*). From there you can:
 
-- edit the home page, About and Contact text (**Home Page & About**)
-- change fonts, heading weight and text sizes (**Fonts & Sizes**)
+- edit the home page, About and Contact text, and change fonts, heading weight and text sizes
+  (**Home Page & About**, with fonts under its **Fonts & Sizes** group)
 - edit each project's text and pictures, show or hide a project, and add new ones (**Projects**)
 - drag projects into a new order with **Reorder**, and drag page sections to move pictures and text
 
@@ -38,8 +38,7 @@ Uploaded photos are resized to 2400px and saved as WebP automatically.
 
 ```
 _config.yml          Jekyll settings (GitHub Pages builds the site)
-_data/site.yml       Home page, About and Contact text
-_data/style.yml      Fonts, heading weight and text sizes
+_data/site.yml       Home page, About and Contact text, plus fonts and sizes (under style:)
 _data/fonts.yml      Fonts offered in the portal (Google Fonts)
 _projects/*.md       One file per project: details, pictures, page sections
 _layouts/            Page templates (default + project)

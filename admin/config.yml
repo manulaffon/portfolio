@@ -87,127 +87,127 @@ singletons:
           - { name: label, label: Label, widget: string }
           - { name: url, label: Web address, widget: string }
 
-  - name: style
-    label: Fonts & Sizes
-    icon: text_fields
-    file: _data/style.yml
-    preview_path: /
-    fields:
-      - name: heading_font
-        label: Heading font
-        widget: select
-        default: Manrope
-        hint: Your name in the header, headlines, project names and section headings.
-        options: &fonts
-          - "Manrope"
-          - "Inter"
-          - "Inter Tight"
-          - "Roboto"
-          - "Roboto Flex"
-          - "Geist"
-          - "DM Sans"
-          - "Work Sans"
-          - "IBM Plex Sans"
-          - "Plus Jakarta Sans"
-          - "Space Grotesk"
-          - "Instrument Sans"
-          - "Sora"
-          - "Outfit"
-          - "Figtree"
-          - "Archivo"
-          - "Montserrat"
-          - "Poppins"
-          - "Fraunces"
-          - "Playfair Display"
-          - "Newsreader"
-      - name: body_font
-        label: Body text font
-        widget: select
-        default: Inter
-        hint: Paragraphs, navigation and small labels.
-        options: *fonts
-      - name: heading_weight
-        label: Heading weight
-        widget: select
-        default: 600
-        options:
-          - { label: Regular, value: 400 }
-          - { label: Medium, value: 500 }
-          - { label: Semibold, value: 600 }
-          - { label: Bold, value: 700 }
-      - name: size_logo
-        label: Your name in the header
-        widget: number
-        value_type: int
-        default: 17
-        min: 10
-        max: 40
-        after_input: px
-      - name: size_hero_title
-        label: Home headline (“Iconic Design”)
-        widget: number
-        value_type: int
-        default: 112
-        min: 32
-        max: 220
-        after_input: px
-        hint: Sizes are for a large screen; headings shrink automatically on smaller screens.
-      - name: size_hero_tagline
-        label: Home — second line under the headline
-        widget: number
-        value_type: int
-        default: 36
-        min: 14
-        max: 90
-        after_input: px
-      - name: size_intro
-        label: Intro text (home page and top of each project)
-        widget: number
-        value_type: int
-        default: 18
-        min: 12
-        max: 32
-        after_input: px
-      - name: size_tile_title
-        label: Project names on the home page tiles
-        widget: number
-        value_type: int
-        default: 44
-        min: 16
-        max: 100
-        after_input: px
-      - name: size_section_heading
-        label: Section headings (About, Contact)
-        widget: number
-        value_type: int
-        default: 38
-        min: 18
-        max: 90
-        after_input: px
-      - name: size_project_title
-        label: Project name at the top of each project page
-        widget: number
-        value_type: int
-        default: 68
-        min: 28
-        max: 140
-        after_input: px
-      - name: size_project_heading
-        label: Headings inside project pages
-        widget: number
-        value_type: int
-        default: 24
-        min: 14
-        max: 60
-        after_input: px
-      - name: size_body
-        label: Body text (paragraphs)
-        widget: number
-        value_type: int
-        default: 17
-        min: 12
-        max: 26
-        after_input: px
+      # Fonts & Sizes (saved in the same file, under style:)
+      - name: style
+        label: Fonts & Sizes
+        widget: object
+        hint: Fonts, heading weight and text sizes used across the whole site.
+        fields:
+          - name: heading_font
+            label: Heading font
+            widget: select
+            default: Manrope
+            hint: Your name in the header, headlines, project names and section headings.
+            options: &fonts
+              - "Manrope"
+              - "Inter"
+              - "Inter Tight"
+              - "Roboto"
+              - "Roboto Flex"
+              - "Geist"
+              - "DM Sans"
+              - "Work Sans"
+              - "IBM Plex Sans"
+              - "Plus Jakarta Sans"
+              - "Space Grotesk"
+              - "Instrument Sans"
+              - "Sora"
+              - "Outfit"
+              - "Figtree"
+              - "Archivo"
+              - "Montserrat"
+              - "Poppins"
+              - "Fraunces"
+              - "Playfair Display"
+              - "Newsreader"
+          - name: body_font
+            label: Body text font
+            widget: select
+            default: Inter
+            hint: Paragraphs, navigation and small labels.
+            options: *fonts
+          - name: heading_weight
+            label: Heading weight
+            widget: select
+            default: 600
+            options:
+              - { label: Regular, value: 400 }
+              - { label: Medium, value: 500 }
+              - { label: Semibold, value: 600 }
+              - { label: Bold, value: 700 }
+          - name: size_logo
+            label: Your name in the header
+            widget: number
+            value_type: int
+            default: 17
+            min: 10
+            max: 40
+            after_input: px
+          - name: size_hero_title
+            label: Home headline (“Iconic Design”)
+            widget: number
+            value_type: int
+            default: 112
+            min: 32
+            max: 220
+            after_input: px
+            hint: Sizes are for a large screen; headings shrink automatically on smaller screens.
+          - name: size_hero_tagline
+            label: Home — second line under the headline
+            widget: number
+            value_type: int
+            default: 36
+            min: 14
+            max: 90
+            after_input: px
+          - name: size_intro
+            label: Intro text (home page and top of each project)
+            widget: number
+            value_type: int
+            default: 18
+            min: 12
+            max: 32
+            after_input: px
+          - name: size_tile_title
+            label: Project names on the home page tiles
+            widget: number
+            value_type: int
+            default: 44
+            min: 16
+            max: 100
+            after_input: px
+          - name: size_section_heading
+            label: Section headings (About, Contact)
+            widget: number
+            value_type: int
+            default: 38
+            min: 18
+            max: 90
+            after_input: px
+          - name: size_project_title
+            label: Project name at the top of each project page
+            widget: number
+            value_type: int
+            default: 68
+            min: 28
+            max: 140
+            after_input: px
+          - name: size_project_heading
+            label: Headings inside project pages
+            widget: number
+            value_type: int
+            default: 24
+            min: 14
+            max: 60
+            after_input: px
+          - name: size_body
+            label: Body text (paragraphs)
+            widget: number
+            value_type: int
+            default: 17
+            min: 12
+            max: 26
+            after_input: px
 
 collections:
   - name: projects
