@@ -36,7 +36,7 @@ blocks:
     image: /images/alexa-photo-frame/alexa-photo-frame-03.jpg
     alt: Close-up of the frame's corner joinery and rear controls
     width: full
-    shape: 3 / 2
+    shape: 5 / 3
     fit: cover
     background: '#0b0b0b'
   - type: text
