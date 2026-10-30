@@ -23,7 +23,7 @@ blocks:
     heading: A Frame First
     body: The Alexa Photo Frame was designed to sit in the home as a picture frame rather than a screen. A solid wood surround and a wide white mat give photos the presence of a printed image, so the product reads as part of the room instead of another device.
   - type: image
-    image: /images/alexa-photo-frame/alexa-photo-frame-02.jpg
+    image: /images/alexa-photo-frame/waterton_walnut_bck_a004-update-1.webp
     alt: Alexa Photo Frame front and back views, with fold-out stand
     width: full
     shape: 5 / 3
@@ -36,18 +36,9 @@ blocks:
     image: /images/alexa-photo-frame/alexa-photo-frame-03.jpg
     alt: Close-up of the frame's corner joinery and rear controls
     width: full
-    shape: 5 / 3
-    fit: contain
-    background: '#0b0b0b'
-  - type: video
-    alt: Alexa Photo Frame in black and natural wood finishes, cycling through photos
-    width: full
-    shape: 5 / 3
+    shape: 3 / 2
     fit: cover
-    background: '#f4f4f2'
-    video: /images/alexa-photo-frame/alexa-photo-frame-video.mp4
-    poster: /images/alexa-photo-frame/alexa-photo-frame-video-poster.jpg
-    position: center
+    background: '#0b0b0b'
   - type: text
     heading: Outcome
     body: Alexa Photo Frame launched in October 2026.
