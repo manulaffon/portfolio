@@ -1,10 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Pantone 11-4201 Cloud Dancer (#F0EEE9), Color of the Year 2026, shading into warm greys -->
   <defs>
     <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#14b8a6"/>
-      <stop offset="0.5" stop-color="#7b5ea7"/>
-      <stop offset="1" stop-color="#d946ef"/>
+      <stop offset="0" stop-color="#F0EEE9"/>
+      <stop offset="0.5" stop-color="#D9D4CD"/>
+      <stop offset="1" stop-color="#A8A29A"/>
     </linearGradient>
   </defs>
-  <circle cx="32" cy="32" r="28" fill="url(#g)"/>
+  <circle cx="32" cy="32" r="27" fill="url(#g)" stroke="#A8A29A" stroke-width="3"/>
 </svg>
